@@ -17,8 +17,8 @@
     "parse-md": "src/cli.js",
     "lint": "eslint --max-warnings 0 --ext .js,.json .",
     "lint:fix": "eslint --max-warnings 0 --ext .js,.json . --fix",
-    "test": "jest",
-    "test:cov": "jest --coverage",
+    "test": "node --experimental-vm-modules ./node_modules/.bin/jest",
+    "test:cov": "node --experimental-vm-modules ./node_modules/.bin/jest --coverage",
     "prepare": "husky install"
   },
   "dependencies": {

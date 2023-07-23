@@ -55,8 +55,8 @@ export function createEntityStore() {
   };
 
   instance.get = (type, name) => {
-    if (!entities[type]) return null;
-    return entities[type][name];
+    const entity = entities[type]?.find((entity) => entity.name === name);
+    return entity ?? null;
   };
 
   instance.getAll = () => entities;
@@ -81,7 +81,7 @@ export function createEntityStack() {
     return null;
   };
 
-  instance.getCurrentEntity = () => stack[stack.length - 1];
+  instance.getCurrentEntity = () => stack[stack.length - 1] ?? null;
 
   return instance;
 }
@@ -106,11 +106,18 @@ export function getHeadingText(node) {
 }
 
 export function createEntityFromText(text, depth, parent) {
-  const matches = /^{\s*([^}]+)\s*}\s*([^$]+)\s*$/g.exec(text);
+  const matches = /^{([^}]+)}([^$]+)$/g.exec(text);
   if (!matches) return null;
 
   const [, type, name] = matches;
-  return { type, name, depth, children: [], data: {}, parent };
+  return {
+    type: type.trim(),
+    name: name.trim(),
+    depth,
+    children: [],
+    data: {},
+    parent
+  };
 }
 
 export function formatEntities(entitiesStore) {
@@ -123,7 +130,7 @@ export function formatEntities(entitiesStore) {
         formattedEntity[entity.parent.type] = entity.parent.name;
       }
       if (entity.children.length) {
-        formattedEntity.children = toMarkdown({ type: "root", children: entity.children });
+        formattedEntity.description = toMarkdown({ type: "root", children: entity.children });
       }
       return formattedEntity;
     });
