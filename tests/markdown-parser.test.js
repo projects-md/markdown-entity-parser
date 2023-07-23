@@ -83,7 +83,7 @@ test("createEntityStore", () => {
   entityStore.add(entity1);
   entityStore.add(entity2);
 
-  expect(entityStore.get("typeA", "item ")).toBe(entity1);
+  expect(entityStore.get("typeA", "item 1")).toBe(entity1);
   expect(entityStore.get("typeA", "item 2")).toBe(entity2);
   expect(entityStore.get("typeA", "item 3")).toBe(null);
   expect(entityStore.get("typeB", "item 1")).toBe(null);
