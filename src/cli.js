@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { resolve } from 'path';
+import { resolve } from "path";
 import { readFile } from "fs/promises";
 import { merge } from "lodash-es";
 import { glob } from "glob";
@@ -8,7 +8,7 @@ import { parseStructuredMarkdown } from "./structured-markdown-parser.js";
 import { stringify as stringifyYaml } from "yaml";
 
 async function main() {
-  const inputPattern = process.argv[2]; 
+  const inputPattern = process.argv[2];
   const files = await glob(inputPattern);
   let allEntities = {};
 

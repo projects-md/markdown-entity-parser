@@ -1,0 +1,21 @@
+{
+  "env": {
+    "node": true,
+    "jest": true,
+    "es6": true
+  },
+  "globals": {},
+  "plugins": ["prettier"],
+  "extends": ["eslint:recommended", "plugin:json/recommended", "prettier"],
+  "rules": {
+    "prettier/prettier": "warn",
+    "prefer-const": "warn",
+    "no-prototype-builtins": "off",
+    "no-case-declarations": "off"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  }
+}

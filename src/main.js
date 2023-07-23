@@ -1,1 +1,1 @@
-export {parseStructuredMarkdown} from './structured-markdown-parser';
+export { parseStructuredMarkdown } from "./structured-markdown-parser";

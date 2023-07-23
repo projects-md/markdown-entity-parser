@@ -1,0 +1,18 @@
+{
+  "editor.formatOnSave": false,
+  "vetur.validation.template": false,
+  "eslint.validate": ["vue", "javascript", "postcss", "css"],
+  "files.associations": {
+    "*.css": "postcss"
+  },
+  "search.exclude": {
+    "node_modules": true,
+    "**/dist/*/**": true
+  },
+  "files.watcherExclude": {
+    "**/node_modules/*/**": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}

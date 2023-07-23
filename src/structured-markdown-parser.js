@@ -14,7 +14,7 @@ export function parseStructuredMarkdown(markdown) {
     }
 
     if (node.type === "heading") {
-      let newEntity = handleHeading(node, entitiesStore, entityStack);
+      const newEntity = handleHeading(node, entitiesStore, entityStack);
       if (newEntity) {
         // headings that are entities should not be included in the tree
         lastNodeCreatedEntity = true;
@@ -30,7 +30,7 @@ export function parseStructuredMarkdown(markdown) {
     }
 
     if (node.type === "code" && node.lang === "yaml" && lastNodeCreatedEntity) {
-      // yaml blocks after an entity heading are considered to be the entity's data 
+      // yaml blocks after an entity heading are considered to be the entity's data
       Object.assign(currentEntity.data, parseYaml(node.value));
       lastNodeCreatedEntity = false;
       return SKIP;
@@ -88,11 +88,7 @@ export function createEntityStack() {
 
 export function handleHeading(node, entitiesStore, entityStack) {
   const parentEntity = entityStack.detectRelevantEntity(node.depth);
-  const entity = createEntityFromText(
-    getHeadingText(node),
-    node.depth,
-    parentEntity
-  );
+  const entity = createEntityFromText(getHeadingText(node), node.depth, parentEntity);
 
   if (entity) {
     entitiesStore.add(entity);
@@ -127,7 +123,7 @@ export function formatEntities(entitiesStore) {
         formattedEntity[entity.parent.type] = entity.parent.name;
       }
       if (entity.children.length) {
-        formattedEntity.children  = toMarkdown({ type: "root", children: entity.children });
+        formattedEntity.children = toMarkdown({ type: "root", children: entity.children });
       }
       return formattedEntity;
     });
