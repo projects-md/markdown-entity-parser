@@ -13,4 +13,4 @@ Parse entities from markdown files into JSON/YAML via CLI or NodeJS API
 - [ ] add unit tests
 - [x] GitHub Actions
 - [ ] add docs in README.md
-- [ ] README badges
+- [x] README badges
