@@ -5,6 +5,14 @@
   "author": "Daniel Kahl <me@danto.dev>",
   "description": "Parse entities from markdown files into JSON/YAML via CLI or NodeJS API",
   "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/projects-md/markdown-entity-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/projects-md/markdown-entity-parser/issues"
+  },
+  "homepage": "https://github.com/projects-md/markdown-entity-parser#readme",
   "type": "module",
   "main": "src/main.js",
   "bin": {
