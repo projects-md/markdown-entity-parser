@@ -1,6 +1,6 @@
-[![Build][build-badge]][build]
-[![Coverage][coverage-badge]][coverage]
-[![Downloads][downloads-badge]][downloads]
+![Build Status](https://img.shields.io/github/actions/workflow/status/projects-md/markdown-entity-parser/test.yml?branch=main)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/projects-md/markdown-entity-parser)
+![GitHub All Releases](https://img.shields.io/github/downloads/projects-md/markdown-entity-parser/total)
 
 # markdown-entity-parser
 
