@@ -4,7 +4,7 @@
   "license": "MIT",
   "author": "Daniel Kahl <me@danto.dev>",
   "description": "Parse entities from markdown files into JSON/YAML via CLI or NodeJS API",
-  "keywords": [],
+  "keywords": ["markdown", "yaml", "json", "md", "parser"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/projects-md/markdown-entity-parser.git"
