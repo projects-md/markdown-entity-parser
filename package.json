@@ -19,7 +19,17 @@
     "lint:fix": "eslint --max-warnings 0 --ext .js,.json . --fix",
     "test": "node --experimental-vm-modules ./node_modules/.bin/jest",
     "test:cov": "node --experimental-vm-modules ./node_modules/.bin/jest --coverage",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "preversion": "npm run lint && npm run test",
+    "postversion": "git push --follow-tags"
+  },
+  "files": [
+    "src",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
   },
   "dependencies": {
     "glob": "^10.3.3",
