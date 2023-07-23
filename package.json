@@ -1,6 +1,6 @@
 {
   "name": "@projects-md/markdown-entity-parser",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "author": "Daniel Kahl <me@danto.dev>",
   "description": "Parse entities from markdown files into JSON/YAML via CLI or NodeJS API",
